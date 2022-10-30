@@ -3,13 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "npm@7.0.0+",
-  "dependencies": {
-    "@craco/craco": "^6.4.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
@@ -36,8 +29,16 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@arco-design/web-react": "^2.41.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
   "devDependencies": {
     "@arco-design/webpack-plugin": "^1.7.0",
+    "@arco-plugins/webpack-react": "^1.4.5",
     "@arco-themes/react-quange": "^0.0.2",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",

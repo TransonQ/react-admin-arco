@@ -1,7 +1,7 @@
-import React from 'react'
+// import '@arco-design/web-react/dist/css/arco.css'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import './index.css'
+import './index.less'
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

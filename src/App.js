@@ -1,7 +1,7 @@
-import './App.css'
+import { Main } from './layouts/main/Main'
 
 function App() {
-  return <div className="App">App</div>
+  return <Main />
 }
 
 export default App
