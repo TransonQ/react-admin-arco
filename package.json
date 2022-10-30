@@ -1,7 +1,8 @@
 {
-  "name": "pmp-admin",
+  "name": "arco-react-admin",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@7.0.0+",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
