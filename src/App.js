@@ -1,7 +1,12 @@
+import { RecoilRoot } from 'recoil'
 import { Main } from './layouts/main/Main'
 
 function App() {
-  return <Main />
+  return (
+    <RecoilRoot>
+      <Main />
+    </RecoilRoot>
+  )
 }
 
 export default App
