@@ -1,8 +1,9 @@
-import { Layout, Menu } from '@arco-design/web-react'
+import { Layout } from '@arco-design/web-react'
 import { IconMenuFold, IconMenuUnfold } from '@arco-design/web-react/icon'
 import { useCallback, useState } from 'react'
 import { Header } from '../header/Header'
-import styles from '../style/layout.module.less'
+import { SiderMenu } from '../sider/SiderMenu'
+import styles from './layout.module.less'
 
 export const Main = () => {
   const [collapsed, setCollapsed] = useState(false)
@@ -24,9 +25,10 @@ export const Main = () => {
           trigger={null}
           collapsible
           breakpoint="xl"
+          style={{ paddingTop: 60 }} // 顶部栏的高度
         >
           <div className={styles['menu-wrapper']}>
-            <Menu collapse={collapsed}></Menu>
+            <SiderMenu collapsed={collapsed} />
           </div>
           <div className={styles['collapse-btn']} onClick={toggleCollapse}>
             {collapsed ? <IconMenuUnfold /> : <IconMenuFold />}
