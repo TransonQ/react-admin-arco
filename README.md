@@ -1,5 +1,23 @@
 # arco-admin
 
+## 必要库
+
+依赖
+
+- @arco-design/web-react
+- ahooks
+- classnames
+- recoil
+
+开发依赖
+
+- @arco-plugins/webpack-react
+- react-app-rewired
+- customize-cra
+- customize-cra-less-loader
+- less
+- less-loader
+
 ## commit
 
 - [Commits MUST be prefixed with a type:](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#specification)

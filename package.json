@@ -40,7 +40,6 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@arco-design/webpack-plugin": "^1.7.0",
     "@arco-plugins/webpack-react": "^1.4.5",
     "@arco-themes/react-quange": "^0.0.2",
     "@commitlint/cli": "^17.1.2",
