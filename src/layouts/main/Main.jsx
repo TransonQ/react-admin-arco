@@ -1,15 +1,26 @@
 import { Layout } from '@arco-design/web-react'
 import { IconMenuFold, IconMenuUnfold } from '@arco-design/web-react/icon'
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Header } from '../header/Header'
 import { SiderMenu } from '../sider/SiderMenu'
 import styles from './layout.module.less'
+
+const headerNavHeight = 60
+const siderNavWidth = 200
+const siderCollapsedWidth = 48
 
 export const Main = () => {
   const [collapsed, setCollapsed] = useState(false)
   const toggleCollapse = useCallback(
     () => setCollapsed((collapsed) => !collapsed),
     []
+  )
+  const contentPadding = useMemo(
+    () => ({
+      paddingTop: headerNavHeight,
+      paddingLeft: collapsed ? siderCollapsedWidth : siderNavWidth,
+    }),
+    [collapsed]
   )
 
   return (
@@ -24,8 +35,9 @@ export const Main = () => {
           onCollapse={setCollapsed}
           trigger={null}
           collapsible
+          width={siderNavWidth}
           breakpoint="xl"
-          style={{ paddingTop: 60 }} // 顶部栏的高度
+          style={{ paddingTop: headerNavHeight }}
         >
           <div className={styles['menu-wrapper']}>
             <SiderMenu collapsed={collapsed} />
@@ -34,6 +46,9 @@ export const Main = () => {
             {collapsed ? <IconMenuUnfold /> : <IconMenuFold />}
           </div>
         </Layout.Sider>
+        <Layout className={styles['layout-content']} style={contentPadding}>
+          <Layout.Content></Layout.Content>
+        </Layout>
       </Layout>
     </Layout>
   )
