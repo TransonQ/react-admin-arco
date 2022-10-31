@@ -53,8 +53,6 @@ export const Header = () => {
   )
 
   const user = useRecoilValue(userSelector)
-  console.log('user: ', user)
-
   const userAvatar = useMemo(
     () =>
       !user.avatar ? user.name?.[0] : <img alt="avatar" src={user.avatar} />,

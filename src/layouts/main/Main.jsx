@@ -1,5 +1,5 @@
 import { LoadingPage } from '@/components/loadingPage/LoadingPage'
-import { Layout } from '@arco-design/web-react'
+import { Card, Layout } from '@arco-design/web-react'
 import { IconMenuFold, IconMenuUnfold } from '@arco-design/web-react/icon'
 import { Suspense, useCallback, useMemo, useState } from 'react'
 import { Header } from '../header/Header'
@@ -49,7 +49,11 @@ export const Main = () => {
             </div>
           </Layout.Sider>
           <Layout className={styles['layout-content']} style={contentPadding}>
-            <Layout.Content></Layout.Content>
+            <Layout.Content>
+              <Card bordered={false} title="this is content title">
+                content
+              </Card>
+            </Layout.Content>
           </Layout>
         </Layout>
       </Layout>
