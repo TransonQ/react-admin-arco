@@ -1,5 +1,6 @@
 import Logo from '@/assets/logo.svg'
 import { localeAtom } from '@/global/localeState'
+import { userSelector } from '@/global/userState'
 import { useToggleLocalState } from '@/hooks/useToggleLocalState'
 import { changeTheme } from '@/utils/changeTheme'
 import { Avatar, Button, Dropdown, Menu } from '@arco-design/web-react'
@@ -10,8 +11,8 @@ import {
   IconSun,
   IconUser,
 } from '@arco-design/web-react/icon'
-import { useEffect } from 'react'
-import { useRecoilState } from 'recoil'
+import { useEffect, useMemo } from 'react'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import styles from './Header.module.less'
 
 export const Header = () => {
@@ -51,6 +52,15 @@ export const Header = () => {
     </Menu>
   )
 
+  const user = useRecoilValue(userSelector)
+  console.log('user: ', user)
+
+  const userAvatar = useMemo(
+    () =>
+      !user.avatar ? user.name?.[0] : <img alt="avatar" src={user.avatar} />,
+    [user]
+  )
+
   return (
     <div className={styles.navbar}>
       <div className={styles.left}>
@@ -78,7 +88,7 @@ export const Header = () => {
         <li>
           <Dropdown droplist={userSettings} trigger="click" position="bl">
             <Avatar size={32} style={{ cursor: 'pointer' }}>
-              <img alt="avatar" src="https://github.com/quanscheng.png" />
+              {userAvatar}
             </Avatar>
           </Dropdown>
         </li>

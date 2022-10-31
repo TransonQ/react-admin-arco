@@ -8,6 +8,7 @@ export const userSelector = selector({
         resolve({
           name: 'Transon Quan',
           age: 27,
+          avatar: 'https://github.com/quanscheng.png',
           job: 'web devloper',
           company: 'Fastlane',
         })
